@@ -42,8 +42,8 @@ body {
 }
 
 #vid1 {
-    max-height: 480px;
-    max-width: 852px;
+    max-width: 480px;
+    max-height: 270px;
     border-radius: 15px;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -145,20 +145,20 @@ body {
 }
 
 #preg {
-    padding: 10px 10px;
+    padding: 7px 15px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-family: 'Segoe UI';
     font-size: 20px;
     color: white;
     background-color: rgb(105, 0, 0);
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition-duration: 250ms;
 }
 
 #preg:hover {
-    background-color: rgb(53, 0, 0);
+    background-color: rgb(83, 0, 0);
 }
 
 #ejCmd3 {
@@ -176,4 +176,14 @@ body {
 img, video, audio {
     max-width: 100%;
     height: auto;
+}
+
+#txtFinal {
+    font-size: 15px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    margin-inline: 10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
