@@ -1,22 +1,69 @@
+body.light-theme {
+    --texto: black;
+    --mdb: rgba(0, 0, 0, 0.5);
+    --fondley: yellow;
+    --fonddiv: rgb(177, 53, 53);
+    --fondo: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(156, 156, 156));
+    --ejfondo: white;
+    --ejfondo2: rgb(0, 0, 0);
+    --txtcontrario: white;
+}
+
+body.dark-theme {
+    --texto: white;
+    --mdb: rgba(255, 255, 255, 0.5);
+    --fondley: rgb(126, 126, 0);
+    --fonddiv: rgb(107, 25, 25);
+    --fondo: linear-gradient(to bottom right, rgb(11, 11, 15), rgb(0, 0, 0));
+    --ejfondo: black;
+    --ejfondo2: white;
+    --txtcontrario: rgb(0, 0, 0);
+}
+
 body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: rgb(228, 236, 252);
+    background: var(--fondo);
+    margin: 0;
+    width: 100%;
 }
 
 #ttl {
+    color: var(--texto);
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 65px;
+    font-size: 55px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#btn_md {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: var(--mdb);
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 20px;
+    transition-duration: 300ms;
+    color: var(--texto);
+}
+
+#btn_md:hover {
+    background-color: rgba(136, 136, 136, 0.5);
+}
+
 .p1 {
+    color: var(--texto);
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-inline: 15%;
+    margin-inline: 30%;
     font-family: Arial;
     font-size: 18px;
 }
@@ -24,32 +71,34 @@ body {
 #img {
     border-radius: 15px;
     padding-top: 15px;
-    max-width: 1120px;
-    max-height: 630px;
+    max-width: 960px;
+    max-height: 540px;
     padding-bottom: 4px;
 }
 
 .ejCmd {
+    white-space: pre-line;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-inline: 20%;
+    margin-inline: 5%;
     font-size: 15px;
     font-family: monospace;
-    color: rgb(122, 255, 95);
-    background-color: rgba(80, 79, 99, 0.651);
+    color: rgb(21, 255, 0);
+    background-color: rgba(34, 33, 43, 0.651);
     padding: 9px 9px;
     border-radius: 15px;
 }
 
 #vid1 {
-    max-width: 480px;
-    max-height: 270px;
+    min-width: 640px;
+    min-height: 360px;
     border-radius: 15px;
     margin-top: 15px;
     margin-bottom: 5px;
 }
 
 .p2 {
+    color:var(--texto);
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 15px;
@@ -58,6 +107,7 @@ body {
 }
 
 .ttl2 {
+    color:var(--texto);
     margin-top: 8px;
     margin-bottom: 8px;
     font-family: Arial;
@@ -66,6 +116,7 @@ body {
 }
 
 #hist_nmr {
+    color: var(--texto);
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: Arial;
@@ -73,36 +124,40 @@ body {
 }
 
 #hist {
+    color: var(--texto);
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-inline: 20%;
+    margin-inline: 35%;
     font-family: 'Segoe UI';
     font-style: italic;
-    font-size: 15px;
+    font-weight: bold;
+    font-size: 18px;
     padding: 20px 22px;
-    background-color: rgb(255, 250, 185);
+    background-color:var(--fondley);
     border-radius: 15px;
 }
 
 .btn_hist input {
-    padding: 12px 14px;
+    padding: 12px 20px;
     margin-inline: 35px;
-    background-color: rgb(49, 49, 49);
+    background-color: var(--mdb);
     font-size: 28px;
     font-weight: bold;
     font-family: Arial;
-    color: white;
+    color: var(--txtcontrario);
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     transition-duration: 350ms;
 }
 
 .btn_hist input:hover {
-    background-color: rgb(5, 5, 5);
+    background-color: rgba(136, 136, 136, 0.5);
 }
 
 #p2_h {
+    color: var(--texto);
+    margin-inline: 10%;
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 16px;
@@ -118,13 +173,14 @@ body {
 }
 
 #ejCmd2 {
+    white-space: pre-line;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-inline: 20%;
+    margin-inline: 5%;
     font-size: 15px;
     font-family: monospace;
-    color: rgb(255, 255, 255);
-    background-color: rgba(64, 63, 77, 0.651);
+    color: rgb(255, 70, 70);
+    background-color: rgba(34, 33, 43, 0.651);
     padding: 9px 9px;
     border-radius: 15px;
 }
@@ -145,26 +201,33 @@ body {
 }
 
 #preg {
-    padding: 7px 15px;
+    padding: 9px 18px;
+    font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: 'Segoe UI';
-    font-size: 20px;
-    color: white;
+    font-size: 25px;
+    color: var(--texto);
     background-color: rgb(105, 0, 0);
     border: none;
-    border-radius: 20px;
+    border-radius: 24px;
     transition-duration: 250ms;
 }
 
 #preg:hover {
-    background-color: rgb(83, 0, 0);
+    background-color: rgb(61, 0, 0);
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 25px;
+    margin-top: 2px;
+    margin-bottom: 1px;
 }
 
 #ejCmd3 {
+    white-space: pre-line;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-inline: 20%;
+    margin-inline: 5%;
     font-size: 15px;
     font-family: monospace;
     color: rgb(155, 213, 252);
@@ -173,17 +236,62 @@ body {
     border-radius: 15px;
 }
 
-img, video, audio {
-    max-width: 100%;
-    height: auto;
-}
-
 #txtFinal {
+    color: var(--texto);
     font-size: 15px;
     font-family: Arial;
     font-style: italic;
     font-weight: bold;
-    margin-inline: 10%;
+    margin-inline: 15%;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.sinstyle {
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-inline: 10%;
+    background-color: var(--ejfondo);
+    border-radius: 15px;
+    padding: 14px 14px;
+    color: var(--texto);
+}
+
+.todojunto {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.juntoaimg {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.cd_test1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-inline: 25%;
+    color: var(--txtcontrario);
+    background-color: var(--ejfondo2);
+    padding: 14px 14px;
+    border-radius: 15px;
+}
+
+.PagSoloHTML {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    margin-inline: 15%;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
 }
