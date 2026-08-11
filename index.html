@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="ForCover.png" type="image/png">
+    <link rel="icon" href="ForCover.ico" type="image/ico">
     <link rel="stylesheet" href="Style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Prueba - Cosas básicas.</title>
+    <title>Página de Prueba - Cosas básicas, pequeños respasos de código para web</title>
 </head>
 <body>
+    <input type="button" value="🌜/☀️" id="btn_md">
     <h1 id="ttl">Página de prueba</h1>
     <p class="p1">Esta es una página de prueba. Con ayuda de Internet o Inteligencia Artificial, trataré de hacer cosas nuevas en la misma, que hasta ahora no aprendí. Espero esas herramientas me sean útiles.</p>
     <img src="PageFiles/WinXPBackgroundimg.webp" alt="Imagen del Fondo de pantalla de Windows XP ancha, con relación de aspecto 16:9" id="img">
@@ -33,7 +34,7 @@
     <p class="p1">Bueno, acá les dejó unas leyendas bien cracks que... ¡Nunca han quedado en el pasado! (Ni las leí, las copié y pegué y ya está). Bueno, el objetivo era poner unos varios textos en una página y alternarlos con botones de anterior y siguiente, funcionan bien así que eso. Por ahora, de acá esto yo ya todo lo sabía hacer por mi cuenta.</p>
     <h2 class="ttl2">Audio</h2>
     <p class="p1">Me daba curiosidad el cómo se hacía para agregar un archivo de audio el cual pueda ser reproducido en una web. Entonces ahora es mi momento; voy a consultar en internet cómo se hace para colocar un audio, creo que puede ser tan fácil como con el video, pero voy a buscar y voy a probar. Tampoco voy a fingir miedo por su dificultad, porque bueno, si es difícil lo será, no puedo hacer nada que lo impida, pero, ¡Comenzemos de una buena vez!</p>
-    <audio src="PageFiles/JBAudioTest.mp3" controls id="aud" title="Canción llamada Jungle Bash de un videojuego antiguo que se titula Crash Bash"></audio>
+    <audio src="PageFiles/JBAudioTest.mp3" controls id="aud"></audio>
     <p class="p1">Ok, la canción se llama Jungle Bash que es perteneciente al juego Crash Bash. Era IGUAL DE SIMPLE QUE COLOCAR EL VIDEO, pues simplemente con colocar el siguiente comando en el HTML:</p>
     <p id="ejCmd2">&ltaudio src="PageFiles/JBAudioTest.mp3" controls id="aud"&gt&lt/audio&gt</p>
     <p class="p1">Pude colocar el audio así no más. Obviamente, guardé todos estos archivos de prueba en la carpeta 'PageFiles', que, por algún extraño motivo, al inspeccionar la página con las DevTools de Google(presionando la tecla F12, o haciendo clic derecho en la página y tocando el botón 'presionar'), la misma no te permite ver más que la imagen del fondo de pantalla del Windows XP, así que saco la conclusión de que algo le pasan a las DevTools, pero sinceramente acá tenemos otro comando híper-básico que pensaba que era difícil porque... Ni sé encima, sólo porque es código. Pero bueno, acá tenemos esta Canción re-contra crack la cual me permite curar mis oidos y sentirme Sigma xdxd. (Mentira, pero suena crack, mi gente). La pueden descargar fácil en la página web llamada 'Khinsider', buscan 'Crash Bash', y dentro del álbum buscas 'Jungle Bash', pero si no les aparece o les da flojera buscar por sus cuentas, aquí les dejo el enlace directo al audio en específico. Pueden hasta descargarla si les gustó.</p>
@@ -47,7 +48,65 @@
     <p class="p1">Por cierto, nunca les dije cómo se coloca el botón en el HTML. Simplemente colocan:</p>
     <span id="ejCmd3">&ltinput type='button' value='Siguiente' id='btn_sig'&gt&lt/input&gt</span>
     <p class="p1">Obviamente explico lo básico: 'input' es la etiqueta, 'type' es el tipo, que para que lo que se 'genere' sea el botón, deberemos colocar 'button', luego, 'value' es el atributo en donde adentro colocamos el texto del botón, como por ejemplo 'Siguiente'. Luego el identificador, que se coloca el atributo 'id='boton_siguiente''. Podés considerarlo opcional porque no le cambia la funcionalidad, pero si querés llamarlo en el Style.CSS y/o el JavaScript, lo vas a necesitar sí o sí, porque para darle funcionalidad necesitás el JavaScript, y el estilo se hace con el CSS así que... Bueno, es algo que se necesita sí o sí. Para aquellos que hagan páginas y ya sean profesionales en su trabajo harán esto de manera automática, pero para los novatos(incluyéndome), recomiendo que todo objeto tenga su 'id' o 'class' para poder llamarlo en cualquier momento con CSS, o un id que debe tener un nombre antes no definido para el js. El 'class' es como el 'id' pero puede colocarse más veces y no necesariamente deberá ser único.</p>
-    <p id="txtFinal">Página generada por humano, no IA. Se recomienda que ud. aprenda también a no hacerlo con IA y hacerlo por su cuenta, es mejor así, porque si no el código de la IA tira algún error y si no sabés de código no sabés qué arreglar. Aunque sea, intenta algo básico.</p>
+    <h2 class="ttl2">Otros apartados en CSS</h2>
+    <p class="p1">Ahora vamos con el CSS. CSS es la abreviación de Cascading Style Sheet u Hoja de Estilo en Cascada, en español. Si te dejas guiar por los "comandos" html que puse, probablemente la página va a salir más o menos así:</p>
+    <div class="sinstyle">
+        <h2>Audio piola xdxdddxdd</h2>
+        <p>Hola gente, acá les tiro un audio bien piola</p>
+        <audio src="PageFiles/Track4 - SM Unimaker.mp3" controls id="aud2"></audio>
+        <div class="todojunto">
+            <p>La cancion la encuentran en </p>
+            <a href="https://downloads.khinsider.com/game-soundtracks/album/super-mario-unimaker-windows-gamerip-2016/04.mp3" target="_blank"">Khinsider</a>
+            <p>en el album de Super Mario Unimaker, siendo esta la 4ta pista del album.</p>
+        </div>
+        <div class="juntoaimg">
+            <img src="PageFiles/thecacaxdxd.png" alt="Imagen de una caquita fachera en roblox ajaja." id="imgbasic">
+            <p>ajajsajs que chistosa la imagen.</p>
+        </div>
+    </div>
+    <p class="p2">(El ejemplo lo amplié un poco pero el style CSS sirve para corregir eso. Casi ni existe una página sin CSS).</p>
+    <p class="p1">Pero en mi página eso no se ve así. Acá se ve centrado, con margen en los lados, un fondo con un pequeño degradado, algunos textos con fondos de colores y bordes... Y aquellos que no sepan probablemente se pregunten: '¿Cómo hago esto?'. Bueno, ahora toca pasarles tuto piola. Como se los explico con texto, es fácil que una IA me lo agarre y me lo resuma mejor de lo que se los explico, pero espero que aún así, a ustedes les sirva. Así que bueno, que se comience con el CSS:</p>
+    <span class="ejCmd">body {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            align-items: center;
+    }
+    </span>
+    <p class="p2">(En este caso, no coloques los guiones y pulsa tab para dejar 5 espacios).</p>
+    <p class="p1">Esto hace que la página centre todos los items en el centro, y el 'display: flex' es para que todos los items se separen con un salto de línea, obligando a dejar margen superior e inferior definido, o un 'margin-inline' para crear un margen entre los lados izquierda y derecha.</p>
+    <p class="p1">Entonces, el texto se debería ver así:</p>
+    <div class="cd_test1">
+        <h1>Hola</h1>
+        <p>Esto es un texto de prueba.</p>
+        <p>Este es otro, y aparece abajo.</p>
+        <p>He aquí dejo un texto largo para mostrar cómo se verían estos con el display: flex para que sepan. El texto se ve organizado seguramente, no? Bueno, aunque se 'emprolijó' bastante la forma de mostrar los elementos, pero aún así faltan cosas como el margen.</p>
+        <img src="PageFiles/ELEGANCIAPURAXD.png" alt="Imagen de un avatar robloxiano con cara de hombre mewing, vestido de negro con corbata. De perfil." id="Lgante">
+        <p>Y la imagen queda bien fachera xdxdxd</p>
+    </div>
+    <p class="p1">Bueno en realidad, en ese CSS solo establecimos el color de fondo a negro, pero el texto también es negro porque en el ejemplo no establecimos el color del mismo, así que no debería verse. Simplemente, si al texto le ponen 'id' o clase('class') para llamarlo en el CSS y ponerle color. Es algo como en el body:</p>
+    <span class="ejCmd">#texto {
+    ......color: white; /* o rgb(255, 255, 255);*/
+    }
+    </span>
+    <p class="p2">(Los puntos no deberán colocarlos, solamente pongan sangrías con tab).</p>
+    <p class="p1">Así debería verse mejor. Aunque aún nos falta algo más... Podemos poner márgenes para que el texto no llegue hasta los bordes de la pantalla y que sea un poco más cómodo de leer. (si ponemos márgenes grandes pensando solo en pantallas grandes, en celular o monitores pequeños de CRT el texto se va a ver 'comprimido', como aplastado entre márgenes grandes).</p>
+    <p class="p1">En este caso, hasta la fecha del 11/8/2026, yo cometo ese error. Aunque, pronto lo puedo arreglar... Al igual que el error de que si ejecutamos la página desde la rama Main desde el .ZIP descargado en el repositorio oficial de Github el CSS, JS y los archivos de la página no cargaban, y la página se ve así: </p>
+    <div class="PagSoloHTML">
+        <input type="button" value="🌜/☀️">
+        <h1>Página de prueba</h1>
+        <p>Esta es una página de prueba. Con ayuda de Internet o Inteligencia Artificial, trataré de hacer cosas nuevas en la misma, que hasta ahora no aprendí. Espero esas herramientas me sean útiles.</p>
+        <img src="noimagen.nohaycarga" alt="Imagen del Fondo de pantalla de Windows XP ancha, con relación de aspecto 16:9.">
+        <p>(Esta imagen la encontre en Google Images. Créditos al creador).</p>
+        <p>Bueno, en esta página voy a aprender a hacer cosas básicas de páginas web que todavía no ví en mis clases con ayuda de Inteligencia Artificial o tutoriales. Voy a tratar de, lo que agregue a la página pueda aprender a hacerlo solo y por mi cuenta para cuando sea mi turno. Ahora, descubrí que puedo poner:</p>
+        <span>border-radius: 15px;</span>
+        <p>...</p>
+    </div>
+    <p class="p1">Y como yo hice la página con los archivos por separado, los botones no van a funcionar, el texto va a parecer de libro, sin diferencias o etc., pero si ustedes extraen la carpeta 'Pagina De Prueba - Archivos' a escritorio y ejecutan el código html(llamado exactamente 'index.html') la página va a ser muy diferente. Pero bueno, si abren el archivo dentro del .ZIP y no lo hacen desde WinRAR o un ejemplar similar, la página no cargará los archivos obviamente.</p>
+    <p class="p1">Por las dudas, antes de continuar, guardo el link al Repositorio de Github ofical:</p>
+    <a href="https://github.com/favalgo13-code/Archivos-De-Pagina-De-Prueba" target="_blank" class="link">Github - 'Archivos De Pagina De Prueba'</a>
+    <p class="p1">Bueno, la versión de este proyecto del 11/8/2026, se corta hasta acá el proyecto. [Ver.: 0.3]</p>
+    <p id="txtFinal">Página hecha por una persona. Si usan la IA, que sea mejor de ayuda que para hacerles todo este trabajo. Es muy posible que tenga errores, y si no sabés hacer esto, no sabés en donde meter mano para arreglar la cosa.</p>
     <script src="script.js"></script>
 </body>
 </html>
