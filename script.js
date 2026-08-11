@@ -1,8 +1,25 @@
+const btn_md = document.getElementById("btn_md");
+const darkd = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (darkd) {
+    document.body.classList.add("dark-theme");
+} else {
+    document.body.classList.add("light-theme");
+}
+
+btn_md.addEventListener("click", () => {
+    if(document.body.classList.contains('dark-theme')) {
+    document.body.classList.replace('dark-theme', 'light-theme');
+    } else {
+        document.body.classList.replace('light-theme', 'dark-theme');
+    }
+});
+
 const hist = [
     "En las riberas del río Paraná, vivía una joven llamada Anahí. Ella no era hermosa de rostro, pero cantaba con una dulzura única en los montes. Cuando llegaron los conquistadores, Anahí defendió su tierra con valentía, pero fue apresada. Una noche logró escapar tras herir a un guardia, sin embargo, la descubrieron. Los hombres la condenaron a morir en la hoguera atada a un árbol. Las llamas rodearon su cuerpo y, al amanecer, el árbol apareció cubierto de hermosas flores rojas y aterciopeladas, rindiendo homenaje al valor y la transformación de la joven.",
     "En el campo argentino se cuenta que el séptimo hijo varón de una familia, al llegar a cierta edad, sufre una maldición las noches de martes y viernes de luna llena. El joven se aleja de la casa, se tira al suelo y da tres vueltas de carnero mientras invoca fuerzas oscuras. Así, se transforma en un enorme perro negro de ojos brillantes o en un hombre lobo que vaga por los montes asustando a los animales. Al amanecer, vuelve a tomar su forma humana, cansado y sin recordar nada de lo que hizo durante la noche.",
     "Cuenta una vieja creencia oriental que los dioses atan un hilo rojo invisible alrededor del dedo meñique de las manos de aquellas personas que están destinadas a encontrarse. Este hilo mágico nunca se rompe, aunque se estire o se enrede con otros. No importa el tiempo que pase, ni los lugares donde vivan los dos; las personas unidas por este hilo están predestinadas a cruzarse y vivir una historia que cambiará sus vidas para siempre.",
-    "Que onda wachines, cómo andan. No se me ocurre nada, asi que para allá!"
+    "Que onda wachines, cómo andan. No se me ocurre nada, asi que para allá! Sí, han sido troleados xxdxdxdx" 
 ]
 const hist_nmr = [
     "Leyenda 1",
