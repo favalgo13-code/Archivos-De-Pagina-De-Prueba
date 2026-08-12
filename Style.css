@@ -194,6 +194,9 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: font-size 200ms ease-out;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px 12px;
+    border-radius: 10px;
 }
 
 .link:hover {
