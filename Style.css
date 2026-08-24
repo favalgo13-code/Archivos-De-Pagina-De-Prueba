@@ -3,10 +3,12 @@ body.light-theme {
     --mdb: rgba(0, 0, 0, 0.5);
     --fondley: yellow;
     --fonddiv: rgb(177, 53, 53);
-    --fondo: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(156, 156, 156));
+    --fondo: linear-gradient(to bottom right, white, rgb(148, 150, 173));
     --ejfondo: white;
     --ejfondo2: rgb(0, 0, 0);
     --txtcontrario: white;
+    --BacCelu: rgb(202, 202, 202);
+    --dclose: aliceblue;
 }
 
 body.dark-theme {
@@ -14,10 +16,12 @@ body.dark-theme {
     --mdb: rgba(255, 255, 255, 0.5);
     --fondley: rgb(126, 126, 0);
     --fonddiv: rgb(107, 25, 25);
-    --fondo: linear-gradient(to bottom right, rgb(11, 11, 15), rgb(0, 0, 0));
+    --fondo: linear-gradient(to bottom right, rgb(17, 16, 22), rgb(2, 2, 3));
     --ejfondo: black;
     --ejfondo2: white;
     --txtcontrario: rgb(0, 0, 0);
+    --BacCelu: rgb(12, 12, 12);
+    --dclose: rgb(1, 8, 15);
 }
 
 body {
@@ -25,8 +29,14 @@ body {
     display: flex;
     flex-direction: column;
     background: var(--fondo);
-    margin: 0;
     width: 100%;
+    overflow-x: hidden;
+    animation: fadeInPage 0.5s ease;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 #ttl {
@@ -38,12 +48,101 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#p_ico {
+    border-radius: 13px;
+    transition-duration: 200ms;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-image: url(ForCover.ico);
+    background-position: center;
+    background-size: cover;
+    width: 64px;
+    height: 64px;
+    filter: brightness(1);
+}
+
+#p_ico:hover {
+    transform: scale(1.20);
+}
+
+#p_ico:active {
+    transform: scale(0.90);
+    filter: brightness(0.7);
+}
+
+.sobrelapagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Sobre {
+    margin-inline: 15%;
+    padding: 17px 17px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--txtcontrario);
+    color: var(--texto);
+}
+
+#Sobre[open] {
+    opacity: 1;
+}
+
+#Sobre::backdrop { backdrop-filter: blur(7px); background-color: rgba(0, 0, 0, 0.486); transition: opacity 0.3s ease; }
+
+#Sobre[open]::backdrop { opacity: 1; }
+
+@starting-style {
+    #Sobre[open] {
+        opacity: 0;
+    }
+    #Sobre[open]::backdrop {
+        opacity: 0;
+    }
+}
+
+#btnCerrarDialog {
+    display: block;
+    background-color: var(--dclose);
+    border: none;
+    border-radius: 17px;
+    padding: 14px 14px;
+    cursor: pointer;
+    font-family: Arial;
+    color: var(--texto);
+    transition-duration: 250ms;
+    font-size: 18px;
+    margin: 15px auto 0 auto;
+}
+
+#btnCerrarDialog:hover { transform: scale(1.15); filter: brightness(1.35); }
+#btnCerrarDialog:active { transform: scale(0.90); filter: brightness(0.7); }
+
+#ttl_1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    font-size: 46px;
+    margin-top: 6px;
+    margin-bottom: 1px;
+}
+
+.p1_1 { font-family: Arial; font-size: 18px; margin-top: 5px; margin-bottom: 6px; margin-inline: 10%; }
+.p2_1 { font-family: Arial; font-weight: bold; font-size: 15px; margin-top: 5px; margin-bottom: 5px; }
+.ttl2_1 { font-family: Arial; font-size: 33px; margin-top: 7px; margin-bottom: 7px; margin-inline: 5%; }
+.imagenes { background-color: var(--mdb); border-radius: 15px; padding: 5px 5px; display: block; max-width: 90%; margin-top: 5px; margin-bottom: 5px; }
+#xpdemo { width: 440px; aspect-ratio: 16/9; height: auto; border-radius: 15px; margin-left: 5px; margin-right: 5px; }
+#cacademo { width: 300px; aspect-ratio: 1/1; height: auto; }
+#elegante { width: 300px; aspect-ratio: 1/1; height: auto; border-radius: 15px; }
+
 #btn_md {
     position: absolute;
     left: 20px;
     top: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
     background-color: var(--mdb);
     font-family: Arial;
     font-weight: bold;
@@ -53,10 +152,16 @@ body {
     border-radius: 20px;
     transition-duration: 300ms;
     color: var(--texto);
+    cursor: pointer;
 }
 
 #btn_md:hover {
     background-color: rgba(136, 136, 136, 0.5);
+    transform: scale(1.15);
+}
+
+#btn_md:active {
+    transform: scale(0.90);
 }
 
 .p1 {
@@ -70,31 +175,52 @@ body {
 
 #img {
     border-radius: 15px;
-    padding-top: 15px;
+    margin-top: 15px;
     max-width: 960px;
-    max-height: 540px;
-    padding-bottom: 4px;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin-bottom: 4px;
+}
+
+.ejCmd, .ejCmd2, .ejCmd3, .ejCmd4 {
+    display: block;
+    width: fit-content;
+    max-width: 50%;
+    margin: 5px auto;
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: auto;
+    font-size: 15px;
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.582);
+    padding: 9px;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .ejCmd {
-    white-space: pre-line;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-inline: 5%;
-    font-size: 15px;
-    font-family: monospace;
-    color: rgb(21, 255, 0);
-    background-color: rgba(34, 33, 43, 0.651);
-    padding: 9px 9px;
-    border-radius: 15px;
+    color: rgb(255, 48, 48)
+}
+
+.ejCmd2 {
+    color:rgb(0, 255, 0)
+}
+
+.ejCmd3 {
+    color: white;
+}
+
+.ejCmd4 {
+    color: rgb(255, 255, 0);
 }
 
 #vid1 {
-    min-width: 640px;
-    min-height: 360px;
+    width: 640px;
+    aspect-ratio: 16/9;
     border-radius: 15px;
     margin-top: 15px;
     margin-bottom: 5px;
+    height: auto;
 }
 
 .p2 {
@@ -152,7 +278,11 @@ body {
 }
 
 .btn_hist input:hover {
-    background-color: rgba(136, 136, 136, 0.5);
+    transform: scale(1.15);
+}
+
+.btn_hist:active {
+    transform: scale(0.90);
 }
 
 #p2_h {
@@ -172,19 +302,6 @@ body {
     margin-bottom: 10px;
 }
 
-#ejCmd2 {
-    white-space: pre-line;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-inline: 5%;
-    font-size: 15px;
-    font-family: monospace;
-    color: rgb(255, 70, 70);
-    background-color: rgba(34, 33, 43, 0.651);
-    padding: 9px 9px;
-    border-radius: 15px;
-}
-
 .link {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -193,14 +310,19 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    transition: font-size 200ms ease-out;
-    background-color: rgba(255, 255, 255, 0.5);
+    transition-duration: 200ms;
+    background-color: rgba(255, 255, 255, 0.50);
     padding: 12px 12px;
     border-radius: 10px;
 }
 
 .link:hover {
-    font-size: 25px;
+    transform: scale(1.15);
+    text-decoration: underline;
+}
+
+.link:active {
+    transform: scale(0.95);
 }
 
 #preg {
@@ -210,7 +332,7 @@ body {
     margin-bottom: 5px;
     font-family: 'Segoe UI';
     font-size: 25px;
-    color: var(--texto);
+    color: white;
     background-color: rgb(105, 0, 0);
     border: none;
     border-radius: 24px;
@@ -218,25 +340,12 @@ body {
 }
 
 #preg:hover {
-    background-color: rgb(61, 0, 0);
-    padding: 10px 20px;
-    font-size: 30px;
-    border-radius: 25px;
-    margin-top: 2px;
-    margin-bottom: 1px;
+    transform: scale(1.15);
+    background-color: rgb(59, 0, 0);
 }
 
-#ejCmd3 {
-    white-space: pre-line;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-inline: 5%;
-    font-size: 15px;
-    font-family: monospace;
-    color: rgb(155, 213, 252);
-    background-color: rgba(34, 33, 43, 0.651);
-    padding: 9px 9px;
-    border-radius: 15px;
+#preg:active {
+    transform: scale(0.95);
 }
 
 #txtFinal {
@@ -248,32 +357,8 @@ body {
     margin-inline: 15%;
     margin-top: 8px;
     margin-bottom: 10px;
-}
-
-.sinstyle {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-inline: 10%;
-    background-color: var(--ejfondo);
-    border-radius: 15px;
-    padding: 14px 14px;
-    color: var(--texto);
-}
-
-.todojunto {
-    white-space: nowrap;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-}
-
-.juntoaimg {
-    white-space: nowrap;
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
+    padding: 9px 9px;
+    border-radius: 10px;
 }
 
 .cd_test1 {
@@ -297,4 +382,101 @@ body {
     border-radius: 15px;
     background-color: white;
     color: black;
+}
+
+@media (max-width: 1280px) and (orientation: landscape) {
+    .p1 { margin-inline: 19%; font-size: 17px; }
+    #hist { margin-inline: 22%; }
+    #ttl { font-size: 49px; }
+    #btn_md { top: 14px; left: 14px; }
+    #img { width: 640px; }
+    .cd_test1 { margin-inline: 7%; }
+    .ttl2 { font-size: 30px; }
+    .sobrelapagina { margin-inline: 5%; }
+    .imagenes { max-width: none; margin: 5px; }
+    #ttl1_1 { font-size: 36px; }
+    .p1_1 { font-size: 16px; margin-top: 4px; margin-bottom: 4px; margin-inline: 7%; }
+    .p2_1 { font-weight: normal; font-size: 14px; margin-top: 3px; margin-bottom: 3px; }
+    .ttl2_1 { font-size: 29px; margin-top: 5px; margin-bottom: 5px; margin-inline: 3%; }
+    #xpdemo { width: 240px; }
+    #cacademo { width: 180px; }
+    #elegante { width: 180px; }
+    #btn_cerrarDialog { font-size: 15px; }
+
+}
+
+@media (max-width: 960px) and (orientation: landscape) {
+    .p1 { margin-inline: 14%; font-size: 13px; margin-top: 4px; margin-bottom: 4px; }
+    #hist { margin-inline: 16%; font-size: 13px; font-weight: normal; font-style: italic; }
+    #ttl { font-size: 33px; margin-top: 3px; margin-bottom: 3px; }
+    #btn_md { top: 12px; left: 12px; font-size: 16px; padding: 10px 10px; border-radius: 9px;}
+    #p_ico { width: 48px; aspect-ratio: 1/1; height: auto; }
+    #img { width: 480px; }
+    .ttl2 { font-size: 22px; margin-top: 3px; margin-bottom: 3px; }
+    #vid1 { max-width: 480px; border-radius: 13px; }
+    .link { font-size: 12px; padding: 10px 10px; border-radius: 10px; margin-top: 6px; margin-bottom: 6px; }
+    .ejCmd, .ejCmd2, .ejCmd3, .ejCmd4 {
+        font-size: 12px;
+    }
+    .p2 { font-size: 10px; font-weight: normal; }
+    #preg { font-size: 16px; padding: 9px 9px; border-radius: 15px; font-weight: normal; }
+    #txtFinal { font-size: 10px; font-weight: normal; border-radius: 5px; padding: 6px 6px; margin-bottom: 5px; margin-top: 4px; }
+    .PagSoloHTML, .cd_test1 {
+        max-width: 90%;
+    }
+    #hist_nmr { font-size: 18px; margin-top: 4px; margin-bottom: 1px; }
+    #p2_h { font-size: 10px; font-weight: normal; margin-top: 3px; margin-bottom: 3px; } 
+    .btn_hist input { font-size: 16px; padding: 8px 8px; border-radius: 9px; margin-bottom: 4px; margin-top: 4px; }
+    .sobrelapagina { margin-inline: 2%; }
+    .imagenes { max-width: none; margin: 2px; }
+    #ttl_1 { font-size: 20px; }
+    .p1_1 { font-size: 11px; margin-top: 2px; margin-bottom: 2px; margin-inline: 4%; }
+    .p2_1 { font-weight: normal; font-size: 10px; margin-top: 1px; margin-bottom: 1px; }
+    .ttl2_1 { font-size: 16px; margin-top: 3px; margin-bottom: 3px; margin-inline: 1%; }
+    #xpdemo { width: 140px; }
+    #cacademo { width: 100px; }
+    #elegante { width: 100px; }
+    #btnCerrarDialog { font-size: 12px; padding: 8px 8px; border-radius: 12px; }
+}
+
+@media (max-width: 1440px) and (orientation: portrait) {
+    body { max-width: 100%; overflow-x: hidden; align-items: center; background-color: var(--BacCelu);}
+    .p1 { margin-inline: 15px; font-size: 22px; }
+    .p2 { overflow-wrap: break-word; margin-inline: 8px;}
+    #hist { margin-inline: 15px; font-size: 22px; }
+    #ttl { font-size: 48px; }
+    #btn_md { top: 13px; left: 13px; padding: 12px 12px; font-size: 15px; border-radius: 9px;  }
+    #p_ico { width: 20px; aspect-ratio: 1/1; height: auto; border-radius: 10px; border: none; right: 24px; top: 24px;}
+    #p_ico:hover { transform: scale(2.5); border-radius: 10px; }
+    #img { width: 95%; }
+    .PagSoloHTML, .cd_test1 {
+        margin-inline: 15px;
+    }
+    .ttl2 { font-size: 39px; }
+    #vid1 { max-width: 95%; }
+    .ejCmd, .ejCmd2, .ejCmd3, .ejCmd4 {
+        max-width: 95%;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: auto;
+        white-space: pre;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 12px 13px;
+        font-size: 20px;
+    }
+    #falBTN { font-size: 17px; }
+    .btn_hist input { font-size: 36px; padding: 16px 25px; }
+    .link { font-size: 21px; max-width: 95%; }
+    .sobrelapagina { margin-inline: 9px; }
+    #Sobre { margin-inline: 15px; margin-top: 5px; margin-bottom: 5px; }
+    .imagenes { max-width: none; margin: 2px; }
+    #ttl_1 { font-size: 34px; }
+    .p1_1 { font-size: 21px; margin-top: 2px; margin-bottom: 2px; margin-inline: 4px; }
+    .p2_1 { font-size: 18px; margin-top: 4px; margin-bottom: 4px; }
+    .ttl2_1 { font-size: 26px; margin-top: 3px; margin-bottom: 3px; margin-inline: 2px; }
+    #xpdemo { width: 140px; }
+    #cacademo { width: 100px; }
+    #elegante { width: 100px; }
+    #btnCerrarDialog { font-size: 20px; padding: 12px 12px; border-radius: 15px; }
 }
